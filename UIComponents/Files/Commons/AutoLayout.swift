@@ -304,11 +304,11 @@ final class AutoLayout {
     @discardableResult
     func topSafeArea(aligneWith: UIView,
                      relation: NSLayoutConstraintType = .equal,
-                     offset: CGFloat = 0,
+                     offset: Spacing = .zero,
                      priority: UILayoutPriority = .required) -> NSLayoutConstraint {
         
         let constraint = self.view.topAnchor.constraint(equalTo: aligneWith.safeAreaLayoutGuide.topAnchor,
-                                                        constant: offset)
+                                                        constant: offset.rawValue)
         constraint.isActive = true
         constraint.priority = priority
         
